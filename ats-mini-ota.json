@@ -24,7 +24,7 @@
       "name": "Chinese Firmware",
       "author": "community",
       "version": "v2025.09.22",
-      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-english-v2025.09.22/ats-mini-english-v2025.09.22-merged.bin",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/chinese-firmware/Chinese-Firmware",
       "star": false
     },
     {
@@ -32,7 +32,7 @@
       "name": "ATS-Mini Marauder",
       "author": "community",
       "version": "v2026.09.09",
-      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-marauder-v2026.09.09/ats-mini-marauder-v2026.09.09-merged.bin",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/marauder-firmware/Marauder-Firmware",
       "star": false
     }
   ],
@@ -74,7 +74,7 @@
         {
           "version": "v2025.09.22",
           "published_at": "2025-09-22T00:00:00Z",
-          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-english-v2025.09.22/ats-mini-english-v2025.09.22-merged.bin",
+          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/chinese-firmware/Chinese-Firmware",
           "image_size": 3378864
         }
       ]
@@ -88,7 +88,7 @@
         {
           "version": "v2026.09.09",
           "published_at": "2026-09-09T00:00:00Z",
-          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-marauder-v2026.09.09/ats-mini-marauder-v2026.09.09-merged.bin",
+          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/marauder-firmware/Marauder-Firmware",
           "image_size": 8388608
         }
       ]
