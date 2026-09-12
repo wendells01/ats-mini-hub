@@ -8,7 +8,7 @@
       "name": "ATS Mini Original",
       "author": "esp32-si4732",
       "version": "v2.38",
-      "file": "https://github.com/wendells01/Launcher/releases/download/ats-mini-original-v2.38/ats-mini-original-v2.38-merged.bin",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.38/ats-mini-original-v2.38-merged.bin",
       "star": false
     },
     {
@@ -46,7 +46,7 @@
         {
           "version": "v2.38",
           "published_at": "2026-09-01T07:12:38Z",
-          "file": "https://github.com/wendells01/Launcher/releases/download/ats-mini-original-v2.38/ats-mini-original-v2.38-merged.bin",
+            "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.38/ats-mini-original-v2.38-merged.bin",
           "image_size": 8388608
         }
       ]
