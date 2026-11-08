@@ -1,5 +1,5 @@
 {
-  "total": 4,
+  "total": 5,
   "page": 1,
   "page_size": 100,
   "items": [
@@ -7,8 +7,8 @@
       "fid": "ats-mini-original",
       "name": "ATS Mini Original",
       "author": "esp32-si4732",
-      "version": "v2.41",
-      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.41/ats-mini-original-v2.41-merged.bin",
+      "version": "v2.45",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.45/ats-mini-original-v2.45-merged.bin",
       "star": false
     },
     {
@@ -34,6 +34,14 @@
       "version": "v2026.09.09",
       "file": "https://github.com/wendells01/ats-mini-hub/releases/download/marauder-firmware/Marauder-Firmware",
       "star": false
+    },
+    {
+      "fid": "ats-mini-pv2ksm",
+      "name": "ATS Mini PV2KSM",
+      "author": "PV2KSM",
+      "version": "r30D",
+      "file": "https://github.com/PV2KSM/ats-mini-pv2ksm/releases/download/r30D/ats-mini-v2.45-ospi-r30D-ota.bin",
+      "star": false
     }
   ],
   "details": {
@@ -44,10 +52,10 @@
       "star": false,
       "versions": [
         {
-          "version": "v2.41",
-          "published_at": "2026-09-29T05:07:26Z",
-          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.41/ats-mini-original-v2.41-merged.bin",
-          "image_size": 8388608
+          "version": "v2.45",
+          "published_at": "2026-10-22T13:00:02Z",
+          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.45/ats-mini-original-v2.45-merged.bin",
+          "image_size": 8388609
         }
       ]
     },
@@ -90,6 +98,20 @@
           "published_at": "2026-09-09T00:00:00Z",
           "file": "https://github.com/wendells01/ats-mini-hub/releases/download/marauder-firmware/Marauder-Firmware",
           "image_size": 8388608
+        }
+      ]
+    },
+    "ats-mini-pv2ksm": {
+      "name": "ATS Mini PV2KSM",
+      "author": "PV2KSM",
+      "fid": "ats-mini-pv2ksm",
+      "star": false,
+      "versions": [
+        {
+          "version": "r30D",
+          "published_at": "2026-11-07T22:58:57Z",
+          "file": "https://github.com/PV2KSM/ats-mini-pv2ksm/releases/download/r30D/ats-mini-v2.45-ospi-r30D-ota.bin",
+          "image_size": 2681392
         }
       ]
     }
