@@ -46,3 +46,14 @@ Each entry below is a live release on this repo; names/sizes must match the JSON
 ## Launcher v1.0.2
 
 Original v2.45 uses its upstream merged image with one 0xFF byte appended to distinguish it from v2.41. Earlier Launchers reject the new size instead of flashing a truncated application. PV2KSM r30D uses the upstream OSPI OTA binary. Install Launcher v1.0.2 before selecting these entries; OTA and settings persistence still require hardware verification.
+
+## Dynamic install metadata
+
+Each version in `details` supplies `image_size` (download bytes), `app_offset`
+(byte offset of the ESP app) and `app_size` (bytes to flash). Update all three
+from the actual release artifact for each new version, and validate the app
+image and board variant before publishing. The Launcher rejects invalid ranges
+and verifies the ESP image before switching. Existing Launcher v1.0.2 ignores
+these fields and only accepts its built-in sizes; it must be updated to use
+future catalog versions. Firmware families and data partitions remain defined
+in the Launcher; changes to those can still require a Launcher update.
