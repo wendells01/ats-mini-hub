@@ -57,7 +57,8 @@
           "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-original-v2.45/ats-mini-original-v2.45-merged.bin",
           "image_size": 8388609,
           "app_offset": 65536,
-          "app_size": 1799648
+          "app_size": 1799648,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/d91e2a7608d79586a531d251312dace570748506"
         }
       ]
     },
@@ -73,7 +74,8 @@
           "file": "https://github.com/wendells01/bruce-ats-mini/releases/download/v1.0.0/Bruce-ats-mini-v1.0.0-merged.bin",
           "image_size": 3786496,
           "app_offset": 65536,
-          "app_size": 3720960
+          "app_size": 3720960,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/186331df2a239c54c67b3c056263bdcf145e59c7"
         }
       ]
     },
@@ -89,7 +91,8 @@
           "file": "https://github.com/wendells01/ats-mini-hub/releases/download/chinese-firmware/Chinese-Firmware",
           "image_size": 3378864,
           "app_offset": 65536,
-          "app_size": 3313328
+          "app_size": 3313328,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/34b1021e9f2d5448bd3b10c8a2a6510ed46ce36f"
         }
       ]
     },
@@ -105,7 +108,8 @@
           "file": "https://github.com/wendells01/ats-mini-hub/releases/download/marauder-firmware/Marauder-Firmware",
           "image_size": 8388608,
           "app_offset": 65536,
-          "app_size": 2022928
+          "app_size": 2022928,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/b0f57ad777e6670a2d7f301ebebd7f02130f422e"
         }
       ]
     },
@@ -121,7 +125,8 @@
           "file": "https://github.com/PV2KSM/ats-mini-pv2ksm/releases/download/r30D/ats-mini-v2.45-ospi-r30D-ota.bin",
           "image_size": 2681392,
           "app_offset": 0,
-          "app_size": 2681392
+          "app_size": 2681392,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/3d708aebb44f82cac6a7f1db8b8a5f30b7d2ed12"
         }
       ]
     }

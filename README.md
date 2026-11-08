@@ -57,3 +57,18 @@ and verifies the ESP image before switching. Existing Launcher v1.0.2 ignores
 these fields and only accepts its built-in sizes; it must be updated to use
 future catalog versions. Firmware families and data partitions remain defined
 in the Launcher; changes to those can still require a Launcher update.
+
+## Direct GitHub API downloads
+
+The catalog's optional `direct_file` points to an immutable Git blob under this
+repository. The Launcher requests raw bytes from that API endpoint with HTTPS,
+checks the advertised image and app ranges, and verifies the ESP image before
+activating it. Original release URLs remain in `file` for older Launchers.
+The Launcher caches the catalog for 60 seconds to reduce API requests; GitHub's
+unauthenticated API rate limits still apply.
+
+For a new compatible release, verify the source and board variant, place its
+binary in `firmware-api/`, compute `git hash-object` and update `direct_file`,
+`image_size`, `app_offset` and `app_size` together before publishing. This is
+a manual update, not an automatic upstream polling service. Changes in the
+firmware's partition needs may still require a Launcher update.
