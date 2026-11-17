@@ -15,8 +15,8 @@
       "fid": "bruce-ats-mini",
       "name": "Bruce ATS Mini",
       "author": "wendells01",
-      "version": "v1.0.0",
-      "file": "https://github.com/wendells01/bruce-ats-mini/releases/download/v1.0.0/Bruce-ats-mini-v1.0.0-merged.bin",
+      "version": "v1.17.0",
+      "file": "https://github.com/wendells01/bruce-ats-mini/releases/download/v1.17.0/Bruce-ats-mini-v1.17.0-merged.bin",
       "star": false
     },
     {
@@ -68,6 +68,15 @@
       "fid": "bruce-ats-mini",
       "star": false,
       "versions": [
+        {
+          "version": "v1.17.0",
+          "published_at": "2026-11-17T12:49:08Z",
+          "file": "https://github.com/wendells01/bruce-ats-mini/releases/download/v1.17.0/Bruce-ats-mini-v1.17.0-merged.bin",
+          "image_size": 4171552,
+          "app_offset": 65536,
+          "app_size": 4106016,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/31a1721295b9dcce7fb8fc9d5dcacc2ed66b7d93"
+        },
         {
           "version": "v1.0.0",
           "published_at": "2026-09-11T17:18:56Z",
