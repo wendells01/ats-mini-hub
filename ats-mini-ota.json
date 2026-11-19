@@ -1,5 +1,5 @@
 {
-  "total": 5,
+  "total": 7,
   "page": 1,
   "page_size": 100,
   "items": [
@@ -41,6 +41,22 @@
       "author": "PV2KSM",
       "version": "r30D",
       "file": "https://github.com/PV2KSM/ats-mini-pv2ksm/releases/download/r30D/ats-mini-v2.45-ospi-r30D-ota.bin",
+      "star": false
+    },
+    {
+      "fid": "ats-mini-resonik",
+      "name": "Resonik ATS Mini",
+      "author": "ep3mhb",
+      "version": "v2.45-r4",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-resonik-v2.45-r4/resonik-ats-mini-v2.45-r4-merged.bin",
+      "star": false
+    },
+    {
+      "fid": "ats-mini-salmer",
+      "name": "ATS Mini Salmer",
+      "author": "wsalmi",
+      "version": "v3.01",
+      "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-salmer-v3.01/ats-mini-salmer-v3.01-merged.bin",
       "star": false
     }
   ],
@@ -145,6 +161,48 @@
           "app_offset": 0,
           "app_size": 2681392,
           "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/3d708aebb44f82cac6a7f1db8b8a5f30b7d2ed12"
+        }
+      ]
+    },
+    "ats-mini-resonik": {
+      "name": "Resonik ATS Mini",
+      "author": "ep3mhb",
+      "fid": "ats-mini-resonik",
+      "star": false,
+      "versions": [
+        {
+          "version": "v2.45-r4",
+          "published_at": "2026-11-15T09:10:01Z",
+          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-resonik-v2.45-r4/resonik-ats-mini-v2.45-r4-merged.bin",
+          "image_size": 8388608,
+          "app_offset": 65536,
+          "app_size": 2052720,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/bee50409e23dd96fc1a7f7bd9b93397fdef27870",
+          "data_partitions": [
+            { "label": "littlefs", "subtype": 131, "size": 1900544 },
+            { "label": "settings", "subtype": 2, "size": 65536 }
+          ]
+        }
+      ]
+    },
+    "ats-mini-salmer": {
+      "name": "ATS Mini Salmer",
+      "author": "wsalmi",
+      "fid": "ats-mini-salmer",
+      "star": false,
+      "versions": [
+        {
+          "version": "v3.01",
+          "published_at": "2026-06-14T15:01:23Z",
+          "file": "https://github.com/wendells01/ats-mini-hub/releases/download/ats-mini-salmer-v3.01/ats-mini-salmer-v3.01-merged.bin",
+          "image_size": 8388608,
+          "app_offset": 65536,
+          "app_size": 1722624,
+          "direct_file": "https://api.github.com/repos/wendells01/ats-mini-hub/git/blobs/361d39ce2c1e7f9643ef6ee0540da3c9f8b0db4e",
+          "data_partitions": [
+            { "label": "littlefs", "subtype": 131, "size": 1900544 },
+            { "label": "settings", "subtype": 2, "size": 65536 }
+          ]
         }
       ]
     }
