@@ -8,7 +8,7 @@ Fetched at runtime by the Launcher firmware — see `ats-mini-ota.json`.
 | fid | name | source release (tag) | image_size | appSize (app slice) | data partition |
 |---|---|---|---|---|---|
 | `bruce-ats-mini` | Bruce ATS Mini | [`wendells01/bruce-ats-mini` `v1.17.0`](https://github.com/wendells01/bruce-ats-mini/releases/tag/v1.17.0) (upstream Bruce 1.17; `v1.0.0` kept as rollback) | 4171552 | 4106016 | spiffs 0x82, USE_REMAINING |
-| `ats-mini-original` | ATS Mini Original | [`esp32-si4732/ats-mini` `v2.45`](https://github.com/esp32-si4732/ats-mini/releases/tag/v2.45) — merged image re-hosted as [this repo `ats-mini-original-v2.45`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-original-v2.45) (upstream ships only split zips; `v2.39` and `v2.38` releases retained as rollback) | 8388609 | 1799648 | littlefs 0x83, 0x70000 |
+| `ats-mini-original` | ATS Mini Original | [`esp32-si4732/ats-mini` `v2.46`](https://github.com/esp32-si4732/ats-mini/releases/tag/v2.46) — merged image re-hosted as [this repo `ats-mini-original-v2.46`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-original-v2.46) (upstream ships only split zips; `v2.45`, `v2.39` and `v2.38` releases retained as rollback) | 8388608 | 1800736 | littlefs 0x83, 0x70000 |
 | `ats-mini-pv2ksm` | ATS Mini PV2KSM | [`PV2KSM/ats-mini-pv2ksm` `r30D`](https://github.com/PV2KSM/ats-mini-pv2ksm/releases/tag/r30D) OSPI OTA | 2681392 | 2681392 (offset 0) | littlefs + settings NVS |
 | `ats-mini-english` | Chinese Firmware | [this repo `chinese-firmware`](https://github.com/wendells01/ats-mini-hub/releases/tag/chinese-firmware) (version = latest changelog entry 2025-09-22) | 3378864 | 3313328 | spiffs 0x82, 0x70000 |
 | `ats-mini-marauder` | ATS-Mini Marauder | [this repo `marauder-firmware`](https://github.com/wendells01/ats-mini-hub/releases/tag/marauder-firmware) (version = in-binary build-date string) | 8388608 | 2022928 | littlefs 0x83, 0x70000 |
@@ -42,14 +42,22 @@ Each entry below is a live release on this repo; names/sizes must match the JSON
   from `bootloader.bin` + `partitions.bin` + `firmware-english.bin`.
 - Tag `marauder-firmware`, asset `Marauder-Firmware`
   (8388608 B).
-- Tag `ats-mini-original-v2.41`, asset `ats-mini-original-v2.41-merged.bin`
-  (8388608 B) — merged from the upstream OSPI zip (upstream ships only split zips).
-- Tags `ats-mini-original-v2.39` and `ats-mini-original-v2.38`, same asset pattern
-  (8388608 B each) — retained as rollback; superseded by v2.41.
+- Tag `ats-mini-original-v2.46`, asset `ats-mini-original-v2.46-merged.bin`
+  (8388608 B, md5 `75b6c0c2531e236852cf0abf2d3840c0`) — the upstream OSPI zip's
+  own `ats-mini.ino.merged.bin`, re-hosted byte-for-byte (no appended padding).
+- Tag `ats-mini-original-v2.45`, asset `ats-mini-original-v2.45-merged.bin`
+  (8388609 B) — retained as rollback; it is upstream's merged plus one `0xFF`
+  byte to tell it apart from v2.41 on Launchers that predate the catalog ranges.
+- Tags `ats-mini-original-v2.41`, `v2.39` and `v2.38`, same asset pattern
+  (8388608 B each) — historical; superseded by v2.46.
 
 ## Launcher versions
 
-Original v2.45 uses its upstream merged image with one 0xFF byte appended to distinguish it from v2.41. Earlier Launchers reject the new size instead of flashing a truncated application. PV2KSM r30D uses the upstream OSPI OTA binary.
+Original v2.46 ships upstream's merged image unmodified (8388608 B), the same size
+as v2.41 — the exact size no longer distinguishes releases because Launcher
+v1.0.3+ reads `app_offset`/`app_size` from the catalog. Older Launchers match the
+stale table entry and fail image verification instead of activating a truncated
+app. PV2KSM r30D uses the upstream OSPI OTA binary.
 
 - v1.0.3 reads `app_offset`/`app_size` from the catalog, so it can install Bruce
   v1.17.0. It ignores `direct_file` and downloads from `file`.
