@@ -12,8 +12,8 @@ Fetched at runtime by the Launcher firmware — see `ats-mini-ota.json`.
 | `ats-mini-pv2ksm` | ATS Mini PV2KSM | [`PV2KSM/ats-mini-pv2ksm` `r30D`](https://github.com/PV2KSM/ats-mini-pv2ksm/releases/tag/r30D) OSPI OTA | 2681392 | 2681392 (offset 0) | littlefs + settings NVS |
 | `ats-mini-english` | Chinese Firmware | [this repo `chinese-firmware`](https://github.com/wendells01/ats-mini-hub/releases/tag/chinese-firmware) (version = latest changelog entry 2025-09-22) | 3378864 | 3313328 | spiffs 0x82, 0x70000 |
 | `ats-mini-marauder` | ATS-Mini Marauder | [this repo `marauder-firmware`](https://github.com/wendells01/ats-mini-hub/releases/tag/marauder-firmware) (version = in-binary build-date string) | 8388608 | 2022928 | littlefs 0x83, 0x70000 |
-| `ats-mini-resonik` | Resonik ATS Mini | [`ep3mhb/resonik-ats-mini` `v2.45-r4`](https://github.com/ep3mhb/resonik-ats-mini/releases/tag/v2.45-r4), merged re-hosted as [this repo `ats-mini-resonik-v2.45-r4`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-resonik-v2.45-r4) | 8388608 | 2052720 | littlefs 0x83, 0x1D0000 + settings 0x10000 |
-| `ats-mini-salmer` | ATS Mini Salmer | [`wsalmi/ats-mini-salmer` `v3.01`](https://github.com/wsalmi/ats-mini-salmer/releases/tag/v3.01), merged re-hosted as [this repo `ats-mini-salmer-v3.01`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-salmer-v3.01) | 8388608 | 1722624 | littlefs 0x83, 0x1D0000 + settings 0x10000 |
+| `ats-mini-resonik` | Resonik ATS Mini | [`ep3mhb/resonik-ats-mini` `v2.45-r4`](https://github.com/ep3mhb/resonik-ats-mini/releases/tag/v2.45-r4), merged re-hosted as [this repo `ats-mini-resonik-v2.45-r4`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-resonik-v2.45-r4) | 8388608 | 2052720 | littlefs 0x83, 0x70000 + settings 0x10000 |
+| `ats-mini-salmer` | ATS Mini Salmer | [`wsalmi/ats-mini-salmer` `v3.01`](https://github.com/wsalmi/ats-mini-salmer/releases/tag/v3.01), merged re-hosted as [this repo `ats-mini-salmer-v3.01`](https://github.com/wendells01/ats-mini-hub/releases/tag/ats-mini-salmer-v3.01) | 8388608 | 1722624 | littlefs 0x83, 0x70000 + settings 0x10000 |
 
 `image_size` = merged factory image length. `appSize` = measured ESP-image app payload
 (magic `0xE9` at `0x10000`, segment walk, checksum byte at `align16(segments_end)-1`,
@@ -93,8 +93,14 @@ sizes.
 An optional `data_partitions` array (`label`, `subtype`, `size`; up to 4 entries,
 labels unique and ≤ 15 chars) describes the data partitions the Launcher must
 create next to the app slot. Launcher v1.0.5+ reads it; entries without it use
-the built-in table below. Omitting the field is the compatible choice for the
-original firmware families.
+the built-in table below.
+
+`size` is only applied when the Launcher has to *create* the partition; an
+existing label keeps its current size. So `0x70000` is the safe value for
+littlefs: it is what the original family already creates, and the firmware
+mounts by label and adapts to the real size. Declaring the firmware's own
+`0x1D0000` would reserve 1.75 MB of free space for a partition that holds a few
+kilobytes of settings.
 
 Built-in fallback table (`atsMiniStaticDataPartitions`, Launcher ≤ v1.0.4),
 using `LAUNCHER_DEFAULT_SPIFFS_SIZE` (0x70000) unless noted:
